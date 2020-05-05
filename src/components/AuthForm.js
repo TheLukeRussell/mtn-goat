@@ -16,32 +16,33 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
       </Spacer>
       <Input
         label='Email'
-        labelStyle={{ color: '#798893' }}
+        // labelStyle={{ color: '#798893' }}
+        labelStyle={{ color: 'grey' }}
         placeholder='email@address.com'
         value={email}
         onChangeText={setEmail}
         autoCapitalize='none'
         autoCorrect={false}
-        leftIcon={{ type: 'Feather', name: 'mail', color: '#798893' }}
+        leftIcon={{ type: 'Feather', name: 'mail', color: 'grey' }}
         leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
       />
       <Spacer />
       <Input
         secureTextEntry
         label='Password'
-        labelStyle={{ color: '#798893' }}
+        labelStyle={{ color: 'grey' }}
         placeholder='Password'
         value={password}
         onChangeText={setPassword}
         autoCapitalize='none'
         autoCorrect={false}
-        leftIcon={{ type: 'Feather', name: 'lock', color: '#798893' }}
+        leftIcon={{ type: 'Feather', name: 'lock', color: 'grey' }}
         leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
       />
       {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
       <Spacer>
         <Button
-          buttonStyle={{ backgroundColor: '#1DA7BB' }}
+          buttonStyle={{ backgroundColor: '#009CB2' }}
           raised
           title={submitButtonText}
           onPress={() => onSubmit({ email, password })}
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     // marginHorizontal: 10,
     width: '90%',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
   },
   title: {
     textAlign: 'center',

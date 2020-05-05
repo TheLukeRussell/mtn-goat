@@ -34,7 +34,7 @@ SigninScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DCDBD1',
+    backgroundColor: '#e6b155',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   image: {
     width: 243,
     height: 85,
-    marginBottom: 50,
+    marginBottom: 30,
   },
 });
 

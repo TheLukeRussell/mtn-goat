@@ -28,6 +28,10 @@ const BikeDetailScreen = ({ navigation }) => {
           Phone Number:
         </Text>
         <Spacer />
+        <Text style={styles.name} h5>
+          What's Broken:
+        </Text>
+        <Spacer />
       </Card>
     </>
   );

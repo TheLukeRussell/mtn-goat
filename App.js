@@ -31,10 +31,10 @@ bikeListFlow.navigationOptions = {
 };
 
 const switchNavigator = createSwitchNavigator({
-  // ResolveAuth: ResolveAuthScreen,
-  // loginFlow: createStackNavigator({
-  //   Signin: SigninScreen,
-  // }),
+  ResolveAuth: ResolveAuthScreen,
+  loginFlow: createStackNavigator({
+    Signin: SigninScreen,
+  }),
   mainFlow: createBottomTabNavigator(
     {
       bikeListFlow,
