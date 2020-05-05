@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
@@ -11,13 +11,19 @@ const SigninScreen = () => {
   return (
     <View style={styles.container}>
       <NavigationEvents onWillBlur={clearErrorMessage} />
+      <Image
+        source={{
+          uri:
+            'https://mountaingoatgvl.com/cms/wp-content/uploads/2017/11/cropped-TMG-Primary-noBG.png',
+        }}
+        style={styles.image}
+      />
       <AuthForm
-        headerText='Sign In'
+        // headerText='Sign In'
         errorMessage={state.errorMessage}
         onSubmit={signin}
         submitButtonText='Sign In'
       />
-      <NavLink text='Dont have an account? Sign up instead' routeName='Signup' />
     </View>
   );
 };
@@ -28,9 +34,15 @@ SigninScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: '#DCDBD1',
     justifyContent: 'center',
-    marginBottom: 250,
+    alignItems: 'center',
+    height: '100%',
+  },
+  image: {
+    width: 243,
+    height: 85,
+    marginBottom: 50,
   },
 });
 

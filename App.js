@@ -3,7 +3,6 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/SigninScreen';
-import SignupScreen from './src/screens/SignupScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
@@ -32,11 +31,10 @@ bikeListFlow.navigationOptions = {
 };
 
 const switchNavigator = createSwitchNavigator({
-  // ResolveAuth: ResolveAuthScreen,
-  // loginFlow: createStackNavigator({
-  //   Signup: SignupScreen,
-  //   Signin: SigninScreen,
-  // }),
+  ResolveAuth: ResolveAuthScreen,
+  loginFlow: createStackNavigator({
+    Signin: SigninScreen,
+  }),
   mainFlow: createBottomTabNavigator({
     bikeListFlow,
     accountFlow,
