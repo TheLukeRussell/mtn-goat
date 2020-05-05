@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-navigation';
 const AccountScreen = () => {
   const { signout } = useContext(AuthContext);
   return (
-    <View>
+    <View style={styles.container}>
       <Spacer>
         <Button buttonStyle={{ backgroundColor: '#F73733' }} title='Sign Out' onPress={signout} />
       </Spacer>
@@ -22,6 +22,10 @@ AccountScreen.navigationOptions = {
   headerTitleStyle: { color: 'white' },
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+  },
+});
 
 export default AccountScreen;

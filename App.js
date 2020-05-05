@@ -31,14 +31,21 @@ bikeListFlow.navigationOptions = {
 };
 
 const switchNavigator = createSwitchNavigator({
-  ResolveAuth: ResolveAuthScreen,
-  loginFlow: createStackNavigator({
-    Signin: SigninScreen,
-  }),
-  mainFlow: createBottomTabNavigator({
-    bikeListFlow,
-    accountFlow,
-  }),
+  // ResolveAuth: ResolveAuthScreen,
+  // loginFlow: createStackNavigator({
+  //   Signin: SigninScreen,
+  // }),
+  mainFlow: createBottomTabNavigator(
+    {
+      bikeListFlow,
+      accountFlow,
+    },
+    {
+      tabBarOptions: {
+        activeTintColor: '#1DA7BB',
+      },
+    }
+  ),
 });
 
 const App = createAppContainer(switchNavigator);
