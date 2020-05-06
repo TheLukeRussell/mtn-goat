@@ -3,13 +3,16 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-elements';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
+import Spacer from '../components/Spacer';
 
 const BikeListScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title} h3>
-        Bike List Screen
-      </Text>
+      <Spacer>
+        <Text style={styles.title} h3>
+          Bike List Screen
+        </Text>
+      </Spacer>
       {/* <TouchableOpacity onPress={() => navigation.navigate('BikeDetail', { _id: item._id })}> */}
       <TouchableOpacity onPress={() => navigation.navigate('BikeDetail')}>
         <ListItem
@@ -41,6 +44,7 @@ const styles = StyleSheet.create({
   },
   container: {
     height: '100%',
+    // backgroundColor: '#dbc9a9',
   },
 });
 

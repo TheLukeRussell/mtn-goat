@@ -10,6 +10,7 @@ import { setNavigator } from './src/navigationRef';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import BikeListScreen from './src/screens/BikeListScreen';
 import BikeDetailScreen from './src/screens/BikeDetailScreen';
+import BikeCreateScreen from './src/screens/BikeCreateScreen';
 
 const bikeListFlow = createStackNavigator({
   BikeList: BikeListScreen,
@@ -20,9 +21,18 @@ const accountFlow = createStackNavigator({
   Account: AccountScreen,
 });
 
+const bikeCreateFlow = createStackNavigator({
+  BikeCreate: BikeCreateScreen,
+});
+
 accountFlow.navigationOptions = {
   title: 'Account',
   tabBarIcon: <MaterialCommunityIcons name='settings' size={20} />,
+};
+
+bikeCreateFlow.navigationOptions = {
+  title: 'Add Bike',
+  tabBarIcon: <MaterialCommunityIcons name='plus' size={20} />,
 };
 
 bikeListFlow.navigationOptions = {
@@ -38,6 +48,7 @@ const switchNavigator = createSwitchNavigator({
   mainFlow: createBottomTabNavigator(
     {
       bikeListFlow,
+      bikeCreateFlow,
       accountFlow,
     },
     {
