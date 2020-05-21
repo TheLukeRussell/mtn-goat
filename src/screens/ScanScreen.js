@@ -43,7 +43,14 @@ const ScanScreen = () => {
         style={StyleSheet.absoluteFillObject}
       />
 
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+      {scanned && (
+        <Button
+          style={styles.button}
+          buttonStyle={{ backgroundColor: '#EF3532' }}
+          title={'Tap Here to Scan Again'}
+          onPress={() => setScanned(false)}
+        />
+      )}
     </View>
   );
 };
@@ -54,6 +61,10 @@ ScanScreen.navigationOptions = {
   headerTitleStyle: { color: 'white' },
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  button: {
+    margin: 20,
+  },
+});
 
 export default ScanScreen;
