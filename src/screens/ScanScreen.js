@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Alert, Linking } from 'react-native';
+import { Button } from 'react-native-elements';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 const ScanScreen = () => {
@@ -15,7 +16,11 @@ const ScanScreen = () => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    Linking.openURL(data);
+    // Alert.alert(type + ' Detected', 'Content:\n' + data, [
+    //   { text: 'Show Bike Details', onPress: () => Linking.openURL(data) },
+    //   { text: 'Cancel', onPress: () => {} },
+    // ]);
   };
 
   if (hasPermission === null) {
