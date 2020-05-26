@@ -11,7 +11,9 @@ const BikeDetailScreen = ({ navigation }) => {
   navigation.getParam('id');
   return (
     <View>
-      <Text>{bikePost.content}</Text>
+      <Card style={styles.container} title={bikePost.title}>
+        <Text>{bikePost.content}</Text>
+      </Card>
     </View>
   );
 };

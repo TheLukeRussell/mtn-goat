@@ -37,12 +37,7 @@ const BikeListScreen = ({ navigation }) => {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity onPress={() => navigation.navigate('BikeDetail', { id: item.id })}>
-              <View style={styles.row}>
-                <Text style={styles.title}>{item.title}</Text>
-                <TouchableOpacity onPress={() => deleteBike(item.id)}>
-                  <Feather style={styles.icon} name='trash' />
-                </TouchableOpacity>
-              </View>
+              <ListItem bottomDivider chevron={true} title={item.title} />
             </TouchableOpacity>
           );
         }}
