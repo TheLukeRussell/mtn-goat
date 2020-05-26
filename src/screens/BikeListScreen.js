@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { Text } from 'react-native-elements';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
 import Spacer from '../components/Spacer';
+import { Context } from '../context/BikeContext';
+import { Feather } from '@expo/vector-icons';
 
 const BikeListScreen = ({ navigation }) => {
+  const { state, deleteBike } = useContext(Context);
   return (
     <View style={styles.container}>
       <Spacer>
@@ -14,7 +17,7 @@ const BikeListScreen = ({ navigation }) => {
         </Text>
       </Spacer>
       {/* <TouchableOpacity onPress={() => navigation.navigate('BikeDetail', { _id: item._id })}> */}
-      <TouchableOpacity onPress={() => navigation.navigate('BikeDetail')}>
+      {/* <TouchableOpacity onPress={() => navigation.navigate('BikeDetail')}>
         <ListItem
           bottomDivider
           chevron={true}
@@ -27,7 +30,23 @@ const BikeListScreen = ({ navigation }) => {
           }}
           subtitle='Owner'
         />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <FlatList
+        data={state}
+        keyExtractor={(bikePost) => bikePost.title}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity onPress={() => navigation.navigate('BikeDetail', { id: item.id })}>
+              <View style={styles.row}>
+                <Text style={styles.title}>{item.title}</Text>
+                <TouchableOpacity onPress={() => deleteBike(item.id)}>
+                  <Feather style={styles.icon} name='trash' />
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
     </View>
   );
 };

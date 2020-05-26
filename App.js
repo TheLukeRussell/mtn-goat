@@ -12,6 +12,7 @@ import BikeListScreen from './src/screens/BikeListScreen';
 import BikeDetailScreen from './src/screens/BikeDetailScreen';
 import BikeCreateScreen from './src/screens/BikeCreateScreen';
 import ScanScreen from './src/screens/ScanScreen';
+import { Provider } from './src/context/BikeContext';
 
 const bikeListFlow = createStackNavigator({
   BikeList: BikeListScreen,
@@ -74,12 +75,14 @@ const App = createAppContainer(switchNavigator);
 
 export default () => {
   return (
-    <AuthProvider>
+    // <AuthProvider>
+    <Provider>
       <App
         ref={(navigator) => {
           setNavigator(navigator);
         }}
       />
-    </AuthProvider>
+    </Provider>
+    // </AuthProvider>
   );
 };

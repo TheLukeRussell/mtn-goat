@@ -1,12 +1,13 @@
-// import '../_mockLocation';
 import React, { useContext, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import { SafeAreaView, withNavigationFocus } from 'react-navigation';
 import BikeForm from '../components/BikeForm';
 import Spacer from '../components/Spacer';
+import { Context } from '../context/BikeContext';
 
-const BikeCreateScreen = () => {
+const BikeCreateScreen = ({ navigation }) => {
+  const { addBike } = useContext(Context);
   return (
     <View>
       <Spacer>
@@ -14,7 +15,11 @@ const BikeCreateScreen = () => {
           Add A Bike
         </Text>
       </Spacer>
-      <BikeForm />
+      <BikeForm
+        onSubmit={(title, content) => {
+          addBike(title, content, () => navigation.navigate('BikeList'));
+        }}
+      />
     </View>
   );
 };

@@ -2,38 +2,17 @@ import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text, Card, Image } from 'react-native-elements';
 import Spacer from '../components/Spacer';
+import { Context } from '../context/BikeContext';
 
 const BikeDetailScreen = ({ navigation }) => {
-  const _id = navigation.getParam('_id');
+  const { state } = useContext(Context);
+
+  const bikePost = state.find((bikePost) => bikePost.id === navigation.getParam('id'));
+  navigation.getParam('id');
   return (
-    <>
-      <Card style={styles.container} title='Name Of Bike'>
-        <Image
-          style={styles.image}
-          resizeMode='cover'
-          source={{
-            uri:
-              'https://surlybikes.com/uploads/bikes/_medium_image/KarateMonkey_BK2042-2000x1333.jpg',
-          }}
-        />
-        <Text style={styles.name} h5>
-          Owner Name:
-        </Text>
-        <Spacer />
-        <Text style={styles.name} h5>
-          Email:
-        </Text>
-        <Spacer />
-        <Text style={styles.name} h5>
-          Phone Number:
-        </Text>
-        <Spacer />
-        <Text style={styles.name} h5>
-          What's Broken:
-        </Text>
-        <Spacer />
-      </Card>
-    </>
+    <View>
+      <Text>{bikePost.content}</Text>
+    </View>
   );
 };
 const styles = StyleSheet.create({
