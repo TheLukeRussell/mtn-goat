@@ -34,5 +34,5 @@ const deleteBike = (dispatch) => {
 };
 
 export const { Context, Provider } = createDataContext(bikeReducer, { addBike, deleteBike }, [
-  { title: 'Test Post', content: 'Test Content', id: 1 },
+  { title: 'Bike Name', content: 'Desciption of the Bike', id: 1 },
 ]);

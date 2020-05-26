@@ -43,7 +43,7 @@ bikeCreateFlow.navigationOptions = {
 
 scanScreenFlow.navigationOptions = {
   title: 'Scan Bike',
-  tabBarIcon: <MaterialCommunityIcons name='plus' size={20} />,
+  tabBarIcon: <MaterialCommunityIcons name='qrcode-scan' size={20} />,
 };
 
 bikeListFlow.navigationOptions = {
@@ -75,14 +75,14 @@ const App = createAppContainer(switchNavigator);
 
 export default () => {
   return (
-    // <AuthProvider>
-    <Provider>
-      <App
-        ref={(navigator) => {
-          setNavigator(navigator);
-        }}
-      />
-    </Provider>
-    // </AuthProvider>
+    <AuthProvider>
+      <Provider>
+        <App
+          ref={(navigator) => {
+            setNavigator(navigator);
+          }}
+        />
+      </Provider>
+    </AuthProvider>
   );
 };
