@@ -72,7 +72,7 @@ const switchNavigator = createSwitchNavigator({
       bikeCreateFlow,
       accountFlow,
       scanScreenFlow,
-      cameraModuleFlow,
+      // cameraModuleFlow,
     },
     {
       tabBarOptions: {
