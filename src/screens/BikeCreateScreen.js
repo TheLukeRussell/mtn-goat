@@ -1,6 +1,6 @@
 import React, { useContext, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-elements';
+import { Text, Button } from 'react-native-elements';
 import { SafeAreaView, withNavigationFocus } from 'react-navigation';
 import BikeForm from '../components/BikeForm';
 import Spacer from '../components/Spacer';
@@ -14,6 +14,13 @@ const BikeCreateScreen = ({ navigation }) => {
         <Text style={styles.title} h3>
           Add A Bike
         </Text>
+      </Spacer>
+      <Spacer>
+        <Button
+          buttonStyle={{ backgroundColor: '#009CB2' }}
+          title='Take Picture'
+          onPress={() => navigation.navigate('CameraModule')}
+        />
       </Spacer>
       <BikeForm
         onSubmit={(title, content) => {

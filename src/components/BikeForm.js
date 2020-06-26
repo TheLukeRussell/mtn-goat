@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../context/BikeContext';
 import { Input, Button } from 'react-native-elements';
+import CameraModule from '../components/CameraModule';
 import Spacer from './Spacer';
 
 const BikeForm = ({ navigation, onSubmit, initialValues }) => {

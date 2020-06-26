@@ -11,12 +11,17 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import BikeListScreen from './src/screens/BikeListScreen';
 import BikeDetailScreen from './src/screens/BikeDetailScreen';
 import BikeCreateScreen from './src/screens/BikeCreateScreen';
+import CameraModule from './src/components/CameraModule';
 import ScanScreen from './src/screens/ScanScreen';
 import { Provider } from './src/context/BikeContext';
 
 const bikeListFlow = createStackNavigator({
   BikeList: BikeListScreen,
   BikeDetail: BikeDetailScreen,
+});
+
+const cameraModuleFlow = createStackNavigator({
+  CameraModule: CameraModule,
 });
 
 const accountFlow = createStackNavigator({
@@ -36,6 +41,11 @@ accountFlow.navigationOptions = {
   tabBarIcon: <MaterialCommunityIcons name='settings' size={20} />,
 };
 
+cameraModuleFlow.navigationOptions = {
+  title: 'Camera',
+  tabBarIcon: <MaterialCommunityIcons name='camera' size={20} />,
+};
+
 bikeCreateFlow.navigationOptions = {
   title: 'Add Bike',
   tabBarIcon: <MaterialCommunityIcons name='plus' size={20} />,
@@ -52,16 +62,17 @@ bikeListFlow.navigationOptions = {
 };
 
 const switchNavigator = createSwitchNavigator({
-  ResolveAuth: ResolveAuthScreen,
-  loginFlow: createStackNavigator({
-    Signin: SigninScreen,
-  }),
+  // ResolveAuth: ResolveAuthScreen,
+  // loginFlow: createStackNavigator({
+  //   Signin: SigninScreen,
+  // }),
   mainFlow: createBottomTabNavigator(
     {
       bikeListFlow,
       bikeCreateFlow,
       accountFlow,
       scanScreenFlow,
+      cameraModuleFlow,
     },
     {
       tabBarOptions: {
