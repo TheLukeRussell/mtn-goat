@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const CameraModule = () => {
+const CameraModule = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
 
@@ -43,12 +44,20 @@ const CameraModule = () => {
               );
             }}
           >
-            <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
+            <Text style={{ fontSize: 18, marginBottom: 10, marginLeft: 10, color: 'white' }}>
+              <MaterialCommunityIcons name='camera-party-mode' size={30} />
+            </Text>
           </TouchableOpacity>
         </View>
       </Camera>
     </View>
   );
+};
+
+CameraModule.navigationOptions = {
+  title: 'Camera',
+  headerStyle: { backgroundColor: '#1DA7BB' },
+  headerTitleStyle: { color: 'white' },
 };
 
 export default CameraModule;
