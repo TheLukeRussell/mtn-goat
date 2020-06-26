@@ -17,26 +17,26 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
       <Input
         label='Email'
         // labelStyle={{ color: '#798893' }}
-        labelStyle={{ color: 'grey' }}
+        labelStyle={{ color: '#5e5d5d' }}
         placeholder='email@address.com'
         value={email}
         onChangeText={setEmail}
         autoCapitalize='none'
         autoCorrect={false}
-        leftIcon={{ type: 'Feather', name: 'mail', color: 'grey' }}
+        leftIcon={{ type: 'Feather', name: 'mail', color: '#5e5d5d' }}
         leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
       />
       <Spacer />
       <Input
         secureTextEntry
         label='Password'
-        labelStyle={{ color: 'grey' }}
+        labelStyle={{ color: '#5e5d5d' }}
         placeholder='Password'
         value={password}
         onChangeText={setPassword}
         autoCapitalize='none'
         autoCorrect={false}
-        leftIcon={{ type: 'Feather', name: 'lock', color: 'grey' }}
+        leftIcon={{ type: 'Feather', name: 'lock', color: '#5e5d5d' }}
         leftIconContainerStyle={{ marginLeft: 0, marginRight: 10 }}
       />
       {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
