@@ -15,6 +15,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
         </Text>
       </Spacer>
       <Input
+        style={styles.input}
         label='Email'
         // labelStyle={{ color: '#798893' }}
         labelStyle={{ color: '#5e5d5d' }}
@@ -64,6 +65,9 @@ const styles = StyleSheet.create({
     // marginHorizontal: 10,
     width: '90%',
     // backgroundColor: 'white',
+  },
+  input: {
+    color: 'white',
   },
   title: {
     textAlign: 'center',
