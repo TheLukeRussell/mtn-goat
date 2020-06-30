@@ -17,7 +17,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
       <Input
         style={styles.input}
         label='Email'
-        // labelStyle={{ color: '#798893' }}
+        labelStyle={{ color: '#798893' }}
         labelStyle={{ color: '#5e5d5d' }}
         placeholder='email@address.com'
         value={email}
